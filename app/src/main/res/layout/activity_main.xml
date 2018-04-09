@@ -55,11 +55,23 @@
 
             </LinearLayout>
 
-            <Button
+           <!-- <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:text="Banner Add goes here" />
+                android:text="Banner Add goes here" />-->
+
+            <TextView
+                android:text="Single-line text view that scrolls automatically if the text is too long to fit in the widget"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit ="marquee_forever"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scrollHorizontally="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"/>
 
         </LinearLayout>
 
