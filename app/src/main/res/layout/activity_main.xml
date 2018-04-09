@@ -22,11 +22,24 @@
             android:layout_weight="0.2"
             android:orientation="vertical">
 
-            <Button
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="0.75"-->
+                <!--android:text="Widgets" />-->
+
+            <TextClock
+                android:id="@+id/textClock"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.75"
-                android:text="Widgets" />
+                android:layout_marginTop="30dp"
+                android:format12Hour="hh:mm a"
+                android:gravity="left"
+                android:textColor="#d41709"
+                android:textSize="44sp"
+                android:textStyle="bold"
+                android:timeZone="PST"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
