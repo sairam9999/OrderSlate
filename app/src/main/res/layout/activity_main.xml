@@ -22,24 +22,109 @@
             android:layout_weight="0.2"
             android:orientation="vertical">
 
-            <!--<Button-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:orientation="horizontal">
+
+                <!--<Button-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="0.33"-->
+                    <!--android:text="Time"-->
+                <com.github.dewinjm.textclock.TextClock
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="T21212"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:clickable="true"
+                    android:text="H22212"
+                    android:textSize="16dp"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="W212121212" />
+
+                <!--<Button-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="0.76"-->
+                    <!--android:text="Widgets2" />-->
+            </LinearLayout>
+
+                    <!--<Button-->
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="match_parent"-->
                 <!--android:layout_weight="0.75"-->
                 <!--android:text="Widgets" />-->
 
-            <TextClock
-                android:id="@+id/textClock"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                android:layout_marginTop="30dp"
-                android:format12Hour="hh:mm a"
-                android:gravity="left"
-                android:textColor="#d41709"
-                android:textSize="44sp"
-                android:textStyle="bold"
-                android:timeZone="PST"/>
+            <!--<TextClock-->
+            <!--android:id="@+id/textClock"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.75"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:format12Hour="hh:mm a"-->
+            <!--android:gravity="left"-->
+            <!--android:textColor="#d41709"-->
+            <!--android:textSize="44sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:timeZone="PST"/>-->
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.35"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<com.github.dewinjm.textclock.TextClock-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+            <!--&lt;!&ndash;app:color="blue"/>&ndash;&gt;-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_temperature"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:text="Temp"-->
+            <!--android:background="@drawable/bg_red"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:fontFamily="sans-serif-condensed"-->
+            <!--android:textSize="16dp"-->
+            <!--android:clickable="true"-->
+            <!--/>-->
+            <!--<TextView-->
+            <!--android:id="@+id/tv_humidity"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="7dp"-->
+            <!--android:text="H"-->
+            <!--android:layout_marginLeft="-8dp"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:background="@drawable/bg_humidity"-->
+            <!--android:layout_toRightOf="@id/tv_temperature"-->
+            <!--android:clickable="true"-->
+            <!--/>-->
+
+            <!--</LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,19 +132,19 @@
                 android:layout_weight="0.35"
                 android:orientation="horizontal">
 
-               <!-- <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.3"
-                    android:text="Video Add goes here" />-->
+                <!-- <Button
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_weight="0.3"
+                     android:text="Video Add goes here" />-->
 
                 <VideoView
                     android:id="@+id/videoView1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
                     android:layout_centerInParent="true"
-/>
+                    android:layout_weight="0.3" />
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -68,23 +153,23 @@
 
             </LinearLayout>
 
-           <!-- <Button
+            <!-- <Button
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_weight="0.6"
+                 android:text="Banner Add goes here" />-->
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:text="Banner Add goes here" />-->
-
-            <TextView
-                android:text="Single-line text view that scrolls automatically if the text is too long to fit in the widget"
-                android:singleLine="true"
                 android:ellipsize="marquee"
-                android:marqueeRepeatLimit ="marquee_forever"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
                 android:scrollHorizontally="true"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.6"/>
+                android:singleLine="true"
+                android:text="Single-line text view that scrolls automatically if the text is too long to fit in the widget" />
 
         </LinearLayout>
 
@@ -100,18 +185,18 @@
                 android:layout_weight="0.8"
                 android:orientation="vertical">
 
-            <com.hitomi.cmlibrary.CircleMenu
+                <com.hitomi.cmlibrary.CircleMenu
 
-                android:id="@+id/circle_menu"
-                android:layout_weight="0.6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                    android:id="@+id/circle_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.4"
-                android:text="Menu Things" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:text="Menu Things" />
             </LinearLayout>
         </LinearLayout>
 
