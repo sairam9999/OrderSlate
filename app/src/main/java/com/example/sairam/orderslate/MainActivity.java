@@ -54,13 +54,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private long UPDATE_INTERVAL = 2 * 1000;  /* 10 secs */
     private long FASTEST_INTERVAL = 2000; /* 2 sec */
 
-    // Construct the url to fetch weather JSON data from web
-    private String mCity = "khulna";
-    private String mCountry = "bd"; // Bangladesh
-    // mURLString = "http://api.openweathermap.org/data/2.5/weather?q=khulna,bd&APPID=YourAppID";
-    private String mURLRoot = "http://api.openweathermap.org/data/2.5/weather?q=";
-    private String mAppID = "&APPID=YourAppID";
-    private String mURLString = mURLRoot+mCity+","+mCountry+mAppID;
+
 
 
    // Context con = this.getApplicationContext();
@@ -225,6 +219,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 //        mLongitudeTextView.setText(String.valueOf(location.getLongitude() ));
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         // You can now create a LatLng Object for use with maps
+        JSONWeatherTask task = new JSONWeatherTask();
+        task.execute(new String[]{msg});
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
     }
 
