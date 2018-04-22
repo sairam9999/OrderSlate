@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class WeatherHttpClient {
 
-    private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
+    private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?";
     private static String IMG_URL = "http://openweathermap.org/img/w/";
 
 
@@ -24,7 +24,10 @@ public class WeatherHttpClient {
             String [] latlon = temp[1].split(",");
             String lat = latlon[0];
             String lon = latlon[1];
-            con = (HttpURLConnection) ( new URL(BASE_URL + location)).openConnection();
+            lat = lat.trim();
+            lon = lon.trim();
+
+            con = (HttpURLConnection) ( new URL(BASE_URL + "lat="+lat + "&lon="+lon + "&APPID=c201fce571fab6832a5c02f73789e244")).openConnection();
             con.setRequestMethod("GET");
             con.setDoInput(true);
             con.setDoOutput(true);

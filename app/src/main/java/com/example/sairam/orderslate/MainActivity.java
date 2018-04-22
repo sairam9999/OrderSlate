@@ -22,6 +22,7 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private static final String HUMIDITY_CLICKED = "Humidity";
     private long UPDATE_INTERVAL = 2 * 1000;  /* 10 secs */
     private long FASTEST_INTERVAL = 2000; /* 2 sec */
+    public TextView temperature = null; //Need to change the access modifier to private
+    public TextView humidity = null;  //Need to change the access modifier to private
 
 
 
@@ -77,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         mLocationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
         checkLocation(); //check whether location service is enable or not in your  phone
+        temperature = findViewById(R.id.tv_temperature);
+        humidity = findViewById(R.id.tv_humidity);
 
 
         circleMenu.setMainMenu(Color.parseColor("#CDCDCD"), R.mipmap.icon_menu, R.mipmap.icon_cancel)
@@ -219,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 //        mLongitudeTextView.setText(String.valueOf(location.getLongitude() ));
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         // You can now create a LatLng Object for use with maps
-        JSONWeatherTask task = new JSONWeatherTask();
+        JSONWeatherTask task = new JSONWeatherTask(this);
         task.execute(new String[]{msg});
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
     }
@@ -294,6 +299,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 }
             });
         }
+
     }
 }
 

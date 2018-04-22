@@ -46,15 +46,15 @@ public class JSONWeatherParser {
         weather.temperature.setTemp(getFloat("temp", mainObj));
 
         // Wind
-        JSONObject wObj = getObject("wind", jObj);
-        weather.wind.setSpeed(getFloat("speed", wObj));
-        weather.wind.setDeg(getFloat("deg", wObj));
-
-        // Clouds
-        JSONObject cObj = getObject("clouds", jObj);
-        weather.clouds.setPerc(getInt("all", cObj));
-
-        // We download the icon to show
+//        JSONObject wObj = getObject("wind", jObj);
+//        weather.wind.setSpeed(getFloat("speed", wObj));
+//        weather.wind.setDeg(getFloat("deg", wObj));
+//
+//        // Clouds
+//        JSONObject cObj = getObject("clouds", jObj);
+//        weather.clouds.setPerc(getInt("all", cObj));
+//
+//        // We download the icon to show
 
 
         return weather;
