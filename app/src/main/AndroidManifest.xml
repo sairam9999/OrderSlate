@@ -5,6 +5,13 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    //You need the wake lock so the phone can be activated
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    //You need the permision to set the alarm
+    <uses-permission android:name="your.package.alarm.permission.SET_ALARM" />
+    //And you need the permision to listen the boot
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,9 +19,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <!--This is the service that will run when the alarm time is reached-->
+        <service
+            android:name="NotificationTrigger"
+            android:exported="false" />
+
+        <!--You see how the filter here is boot completed, that is why that receiver works, cause you declared the filter here-->
+        <receiver
+            android:name="DeviceBootReceiver"
+            android:enabled="true"/>
+        <receiver android:name="AlarmBroadcaster" />
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 .addSubMenu(Color.parseColor("#258CFF"), R.mipmap.icon_home)
                 .addSubMenu(Color.parseColor("#30A400"), R.mipmap.icon_search)
                 .addSubMenu(Color.parseColor("#FF4B32"), R.mipmap.icon_notify)
-                .addSubMenu(Color.parseColor("#8A39FF"), R.mipmap.icon_setting)
+                .addSubMenu(Color.parseColor("#8A39FF"), R.mipmap.icon_cart)
                 .addSubMenu(Color.parseColor("#FF6A00"), R.mipmap.icon_gps)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
 
